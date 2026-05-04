@@ -12,7 +12,7 @@ public class Main {
     static void main() {
         Shape circle = new Circle(8);
 
-        Shape triangle = new Triangle(10, 8, 6);
+        Shape triangle = new Triangle(3, 4, 5);
 
         Shape square = new Square(15);
 

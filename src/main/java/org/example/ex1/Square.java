@@ -6,7 +6,7 @@ public class Square extends Shape {
     public Square(double length) {
         super("Square", "Yellow");
         if (length <= 0) {
-            throw new IllegalArgumentException("Length must be grater than zero");
+            throw new IllegalArgumentException("Length must be greater than zero");
         }
         this.length = length;
     }
@@ -17,7 +17,7 @@ public class Square extends Shape {
     }
 
     @Override
-    double calculatePerimeter() {
+    public double calculatePerimeter() {
         return 4 * length;
     }
 

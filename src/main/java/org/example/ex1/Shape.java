@@ -12,10 +12,10 @@ public abstract class Shape {
 
     public abstract double calculateArea();
 
-    abstract double calculatePerimeter();
+    public abstract double calculatePerimeter();
 
     public void describe() {
-        System.out.println(name + " " + color + " and have the aria: " + calculateArea() +
+        System.out.println(name + " " + color + " and have the area: " + calculateArea() +
                 ", and the perimeter: " + calculatePerimeter());
     }
 

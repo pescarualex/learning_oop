@@ -12,12 +12,16 @@ public class Triangle extends Shape {
             throw new IllegalArgumentException("Base, Height and Hypotenuse must be grater than zero");
         }
 
-        if(base + height > hypotenuse || height + hypotenuse > base || hypotenuse + base > height){
+        double sumOfLegsSquared = Math.pow(base, 2) + Math.pow(height, 2);
+        double hypotenuseSquare = Math.pow(hypotenuse, 2);
+        boolean isValidRightTriangle = Math.abs(sumOfLegsSquared - hypotenuseSquare) < 1e-9;
+
+        if (isValidRightTriangle) {
             this.base = base;
             this.height = height;
             this.hypotenuse = hypotenuse;
         } else {
-            throw new IllegalArgumentException("Triangle Inequality.");
+            throw new IllegalArgumentException("Not right-angled triangle.");
         }
     }
 
@@ -27,7 +31,7 @@ public class Triangle extends Shape {
     }
 
     @Override
-    double calculatePerimeter() {
+    public double calculatePerimeter() {
         return base + height + hypotenuse;
     }
 
