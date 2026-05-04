@@ -1,42 +1,30 @@
 package org.example.ex1;
 
-import java.util.Arrays;
 
 public class Triangle extends  Shape{
     private final double base;
     private final double height;
-    private final double[] sides;
+    private final double hypotenuse;
 
-    public Triangle(double base, double heigth, double[] sides){
-        if(base < 0 || heigth < 0){
+    public Triangle(double base, double height, double hypotenuse){
+        super("Triangle", "Blue");
+        if(base <= 0 || height <= 0 || hypotenuse <= 0){
             throw new IllegalArgumentException("Base and Height can't be negative.");
         }
 
-        for(int i = 0; i < sides.length; i++){
-            if (sides[i] < 0){
-                throw new IllegalArgumentException("Sides can't be negative.");
-            }
-        }
-
         this.base = base;
-        this.height = heigth;
-        this.sides = sides;
+        this.height = height;
+        this.hypotenuse = hypotenuse;
     }
 
     @Override
-    double calculateAria(){
-        double aria = 0;
-        aria = (base * height) / 2;
-        return aria;
+    protected double calculateArea(){
+        return (base + height + hypotenuse) / 2;
     }
 
     @Override
     double calculatePerimeter(){
-        double perimeter = 0;
-        for(int i = 0; i < sides.length; i++){
-            perimeter += sides[i];
-        }
-        return perimeter;
+        return base + height + hypotenuse;
     }
 
     @Override
@@ -44,7 +32,7 @@ public class Triangle extends  Shape{
         return super.toString() + "Triangle{" +
                 "base=" + base +
                 ", height=" + height +
-                ", sides=" + Arrays.toString(sides) +
+                ", hypotenuse=" + hypotenuse +
                 '}';
     }
 }

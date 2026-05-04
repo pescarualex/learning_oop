@@ -2,33 +2,25 @@ package org.example.ex1;
 
 public abstract class Shape {
 
-    private String name;
-    private String color;
+    private final String name;
+    private final String color;
 
-    abstract double calculateAria();
-    abstract double calculatePerimeter();
-
-    public void describe(){
-        System.out.println(name + " " + color + " and have the aria: " + calculateAria() +
-                ", and the perimeter: " + calculatePerimeter());
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
+    public Shape(String name, String color){
         this.name = name;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
         this.color = color;
     }
 
+    abstract double calculateArea();
+    abstract double calculatePerimeter();
+
+    public void describe(){
+        System.out.println(name + " " + color + " and have the aria: " + calculateArea() +
+                ", and the perimeter: " + calculatePerimeter());
+    }
+
+    public double getArea(){
+        return calculateArea();
+    }
 
     @Override
     public String toString() {

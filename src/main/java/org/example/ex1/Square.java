@@ -4,24 +4,21 @@ public class Square extends Shape{
     private final double length;
 
     public Square(double length){
-        if(length < 0){
+        super("Square", "Yellow");
+        if(length <= 0){
             throw  new IllegalArgumentException("Length can't be negative.");
         }
         this.length = length;
     }
 
     @Override
-    double calculateAria(){
-        double aria = 0;
-        aria = Math.pow(length, 2);
-        return aria;
+    double calculateArea(){
+        return Math.pow(length, 2);
     }
 
     @Override
     double calculatePerimeter(){
-        double perimeter = 0;
-        perimeter = 4 * length;
-        return perimeter;
+        return 4 * length;
     }
 
     @Override
