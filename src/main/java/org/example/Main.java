@@ -21,13 +21,13 @@ public class Main {
         shapes.add(triangle);
         shapes.add(square);
 
-        double totalAria = 0;
+        double totalArea = 0;
 
-        for(Shape shape : shapes){
+        for (Shape shape : shapes) {
             shape.describe();
-            totalAria += shape.getArea();
+            totalArea += shape.calculateArea();
         }
 
-        System.out.println("Total aria: " + totalAria);
+        System.out.println("Total area: " + totalArea);
     }
 }

@@ -1,30 +1,30 @@
 package org.example.ex1;
 
-public class Circle extends Shape{
+public class Circle extends Shape {
     private final double radius;
 
-    public Circle(double raza){
+    public Circle(double radius) {
         super("Circle", "Red");
-        if(raza <= 0){
-            throw  new IllegalArgumentException("Raza can't be negative.");
+        if (radius <= 0) {
+            throw new IllegalArgumentException("Radius must be greater than zero");
         }
-        this.radius = raza;
+        this.radius = radius;
     }
 
     @Override
-    double calculateArea(){
-        return Math.PI * Math.pow(radius,2);
+    public double calculateArea() {
+        return Math.PI * Math.pow(radius, 2);
     }
 
     @Override
-    double calculatePerimeter(){
+    double calculatePerimeter() {
         return 2 * Math.PI * radius;
     }
 
     @Override
     public String toString() {
-        return super.toString() + "Circle{" +
-                "raza=" + radius +
+        return super.toString() + " - " + "Circle{" +
+                "radius=" + radius +
                 '}';
     }
 }
