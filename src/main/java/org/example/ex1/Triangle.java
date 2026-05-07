@@ -1,6 +1,5 @@
 package org.example.ex1;
 
-
 public class Triangle extends Shape {
     private final double base;
     private final double height;
@@ -9,12 +8,12 @@ public class Triangle extends Shape {
     public Triangle(double base, double height, double hypotenuse) {
         super("Triangle", "Blue");
         if (base <= 0 || height <= 0 || hypotenuse <= 0) {
-            throw new IllegalArgumentException("Base, Height and Hypotenuse must be grater than zero");
+            throw new IllegalArgumentException("Base, Height and Hypotenuse must be greater than zero");
         }
 
         double sumOfLegsSquared = Math.pow(base, 2) + Math.pow(height, 2);
-        double hypotenuseSquare = Math.pow(hypotenuse, 2);
-        boolean isValidRightTriangle = Math.abs(sumOfLegsSquared - hypotenuseSquare) < 1e-9;
+        double hypotenuseSquared = Math.pow(hypotenuse, 2);
+        boolean isValidRightTriangle = Math.abs(sumOfLegsSquared - hypotenuseSquared) < 1e-9;
 
         if (isValidRightTriangle) {
             this.base = base;
