@@ -3,29 +3,20 @@ package org.example.ex2;
 import java.time.LocalDateTime;
 
 public abstract class Notification {
-    private String recipient;
+    private final String recipient;
     private final String message;
     private final LocalDateTime timestamp;
 
     public Notification(String recipient, String message) {
-        if (recipient.isEmpty() || recipient == null) {
+        if (recipient == null || recipient.isBlank()) {
             throw new IllegalArgumentException("Recipient cannot be empty.");
         }
 
-        if (message.isEmpty() || message == null) {
+        if (message == null || message.isBlank()) {
             throw new IllegalArgumentException("Message cannot be empty");
         }
 
         this.recipient = recipient;
-        this.message = message;
-        timestamp = LocalDateTime.now();
-    }
-
-    public Notification(String message) {
-        if (message.isEmpty() || message == null) {
-            throw new IllegalArgumentException("Message cannot be empty");
-        }
-
         this.message = message;
         timestamp = LocalDateTime.now();
     }

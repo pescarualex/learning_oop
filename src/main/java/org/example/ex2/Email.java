@@ -4,7 +4,7 @@ public class Email extends Notification implements Loggable {
     private final String subject;
 
     public Email(String recipient, String subject, String message) {
-        if (subject.isEmpty() || subject == null) {
+        if (subject == null || subject.isBlank()) {
             throw new IllegalArgumentException("Subject cannot be empty.");
         }
 
