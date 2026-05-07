@@ -4,10 +4,6 @@ public class Push extends Notification implements Loggable {
     private final String deviceToken;
 
     public Push(String deviceToken, String message) {
-        if (deviceToken == null || deviceToken.isBlank()) {
-            throw new IllegalArgumentException("Device Token cannot be empty.");
-        }
-
         super(deviceToken, message);
         this.deviceToken = deviceToken;
     }
@@ -21,5 +17,12 @@ public class Push extends Notification implements Loggable {
     @Override
     public void logToConsole() {
         System.out.println("[LOG] Notification to device " + deviceToken + " at " + getTimestamp() + " sent.");
+    }
+
+    @Override
+    public String toString() {
+        return "Push{" +
+                "deviceToken='" + deviceToken + '\'' +
+                '}';
     }
 }

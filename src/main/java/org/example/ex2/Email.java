@@ -22,4 +22,11 @@ public class Email extends Notification implements Loggable {
     public void logToConsole() {
         System.out.println("[LOG] Notification to " + getRecipient() + " at " + getTimestamp() + " sent.");
     }
+
+    @Override
+    public String toString() {
+        return "Email{" +
+                "subject='" + subject + '\'' +
+                '}';
+    }
 }

@@ -11,4 +11,6 @@ public class SMS extends Notification {
         System.out.println("[SMS] To: " + getRecipient() + " | Message: " +
                 getMessage() + " | Sent at: " + getTimestamp());
     }
+
+
 }
