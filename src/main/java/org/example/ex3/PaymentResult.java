@@ -9,7 +9,7 @@ public class PaymentResult {
     private final String message;
     private final LocalDateTime timestamp;
 
-    public PaymentResult(boolean success, String message){
+    public PaymentResult(boolean success, String message) {
         this.success = success;
         this.transactionId = UUID.randomUUID().toString();
         this.message = message;

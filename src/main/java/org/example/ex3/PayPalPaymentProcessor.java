@@ -1,11 +1,11 @@
 package org.example.ex3;
 
-public class PayPalPaymentProcessor implements PaymentProcessor{
+public class PayPalPaymentProcessor implements PaymentProcessor {
     private final String email;
 
-    public PayPalPaymentProcessor(String email){
-        if (email == null || email.isBlank() || !email.matches("^[^@]+@[^@]+$")){
-            System.out.println("Incorrect email");
+    public PayPalPaymentProcessor(String email) throws InvalidPaymentException {
+        if (email == null || email.isBlank() || !email.matches("^[^@]+@[^@]+$")) {
+            throw new InvalidPaymentException("Incorrect email");
         }
 
         this.email = email;
@@ -13,10 +13,6 @@ public class PayPalPaymentProcessor implements PaymentProcessor{
 
     @Override
     public PaymentResult process(double amount, String currency) {
-        if (!email.matches("^[^@]+@[^@]+$")){
-            return new PaymentResult(false, "Incorrect email.");
-        } else {
-            return new PaymentResult(true, "PayPal payment processed.");
-        }
+        return new PaymentResult(true, "PayPal payment processed with amount: " + amount + " " + currency);
     }
 }
