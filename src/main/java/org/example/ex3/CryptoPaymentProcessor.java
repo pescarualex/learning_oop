@@ -16,7 +16,7 @@ public class CryptoPaymentProcessor implements PaymentProcessor {
         if (amount <= 10) {
             return new PaymentResult(false, "Amount too small for crypto transaction.");
         } else {
-            return new PaymentResult(true, "Crypto payment processed with amount: " + amount + " " + currency);
+            return new PaymentResult(true, "Crypto payment (**** " + walletAddress.substring(walletAddress.length() - 4) + " processed with amount: " + amount + " " + currency);
         }
     }
 }

@@ -13,6 +13,6 @@ public class PayPalPaymentProcessor implements PaymentProcessor {
 
     @Override
     public PaymentResult process(double amount, String currency) {
-        return new PaymentResult(true, "PayPal payment processed with amount: " + amount + " " + currency);
+        return new PaymentResult(true, "PayPal payment (" + email + ") processed with amount: " + amount + " " + currency);
     }
 }
