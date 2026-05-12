@@ -1,12 +1,13 @@
 package org.example;
 
 import org.example.ex2.*;
+import org.example.ex3.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
-    static void main() {
+    static void main() throws InvalidPaymentException {
 //        ex1
 //        Shape circle = new Circle(8);
 //
@@ -31,30 +32,77 @@ public class Main {
 
 //
 //        ex2
-        Notification email = new Email("alexflopesca@gmail.com", "Test Email", "This email is a test");
-        Notification sms = new SMS("+403728273543", "Will drink today a coffee?");
-        Notification push = new Push("ABC123-RO", "Need approval on task nr. 34");
+//        Notification email = new Email("alexflopesca@gmail.com", "Test Email", "This email is a test");
+//        Notification sms = new SMS("+403728273543", "Will drink today a coffee?");
+//        Notification push = new Push("ABC123-RO", "Need approval on task nr. 34");
+//
+//        Notification email2 = new Email("alex_florin@gmail.com", "Test Email", "This email is a test");
+//        Notification sms2 = new SMS("+2324324324324", "Will drink today a coffee?");
+//        Notification push2 = new Push("zzz32-RO", "Need approval on task nr. 38");
+//
+//        List<Notification> notifications = new ArrayList<>();
+//        notifications.add(email);
+//        notifications.add(sms);
+//        notifications.add(push);
+//        notifications.add(email2);
+//        notifications.add(sms2);
+//        notifications.add(push2);
+//
+//        for (Notification notification : notifications) {
+//            notification.send();
+//        }
+//
+//        for (Notification notification : notifications) {
+//            if (notification instanceof Loggable loggable) {
+//                loggable.logToConsole();
+//            }
+//        }
 
-        Notification email2 = new Email("alex_florin@gmail.com", "Test Email", "This email is a test");
-        Notification sms2 = new SMS("+2324324324324", "Will drink today a coffee?");
-        Notification push2 = new Push("zzz32-RO", "Need approval on task nr. 38");
 
-        List<Notification> notifications = new ArrayList<>();
-        notifications.add(email);
-        notifications.add(sms);
-        notifications.add(push);
-        notifications.add(email2);
-        notifications.add(sms2);
-        notifications.add(push2);
+//        ex3
+        CardPaymentProcessor cardPaymentProcessor = new CardPaymentProcessor("123456789101213");
+        PayPalPaymentProcessor payPalPaymentProcessor = new PayPalPaymentProcessor("alex@gmail.com");
+        CryptoPaymentProcessor cryptoPaymentProcessor = new CryptoPaymentProcessor("1h2ysbdh3y4hdbshdyetdgsbdgchtucjd");
 
-        for (Notification notification : notifications) {
-            notification.send();
-        }
+        PaymentService cardPaymentService = new PaymentService(cardPaymentProcessor);
+        PaymentService payPalPaymentService = new PaymentService(payPalPaymentProcessor);
+        PaymentService cryptoPaymentService = new PaymentService(cryptoPaymentProcessor);
 
-        for (Notification notification : notifications) {
-            if (notification instanceof Loggable loggable) {
-                loggable.logToConsole();
-            }
-        }
+        cardPaymentService.pay(100.50, "RON");
+        payPalPaymentService.pay(50.00, "EUR");
+        cryptoPaymentService.pay(5.00, "USD");
+        cryptoPaymentService.pay(100.00, "USD");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }
