@@ -2,8 +2,8 @@ package org.example.ex4;
 
 public class Eagle extends Bird implements Flyer {
 
-    public Eagle(String name, int age, double wingsSpan) {
-        super(name, age, wingsSpan);
+    public Eagle(String name, int age, double wingSpan) {
+        super(name, age, wingSpan);
     }
 
     @Override

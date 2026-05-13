@@ -2,8 +2,8 @@ package org.example.ex4;
 
 public class Penguin extends Bird implements Swimmer {
 
-    public Penguin(String name, int age, double wingsSpan) {
-        super(name, age, wingsSpan);
+    public Penguin(String name, int age, double wingSpan) {
+        super(name, age, wingSpan);
     }
 
     @Override
