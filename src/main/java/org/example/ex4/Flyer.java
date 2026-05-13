@@ -1,5 +1,5 @@
 package org.example.ex4;
 
-public interface Fly {
+public interface Flyer {
     void fly();
 }

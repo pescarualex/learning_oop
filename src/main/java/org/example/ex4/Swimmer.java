@@ -1,5 +1,5 @@
 package org.example.ex4;
 
-public interface Swim {
+public interface Swimmer {
     void swim();
 }

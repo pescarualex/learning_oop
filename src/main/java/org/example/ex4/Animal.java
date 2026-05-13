@@ -2,9 +2,9 @@ package org.example.ex4;
 
 public abstract class Animal {
     private final String name;
-    private final double age;
+    private final int age;
 
-    public Animal(String name, double age) {
+    public Animal(String name, int age) {
         if (name == null || name.isBlank()) {
             throw new IllegalArgumentException("Name cannot be empty.");
         }
@@ -19,7 +19,9 @@ public abstract class Animal {
 
     abstract public void makeSound();
 
-    abstract public void sleep();
+    public void sleep() {
+        System.out.println(getName() + " is sleeping.");
+    }
 
     public String getName() {
         return name;

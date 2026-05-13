@@ -11,7 +11,7 @@ public class Main {
         Animal dog = new Dog("Linda", 11, "black");
         Animal cat = new Cat("Kiki", 3, "orange");
         Animal eagle = new Eagle("Jack", 2, 0.5);
-        Animal penguin = new Penguin("Yoyo", 1.5, 0.3);
+        Animal penguin = new Penguin("Yoyo", 1, 0.3);
 
         List<Animal> animals = new ArrayList<>();
         animals.add(dog);
@@ -23,12 +23,12 @@ public class Main {
             animal.sleep();
             animal.makeSound();
 
-            if (animal instanceof Swim swimmers) {
-                swimmers.swim();
+            if (animal instanceof Swimmer swimmer) {
+                swimmer.swim();
             }
 
-            if (animal instanceof Fly fliers) {
-                fliers.fly();
+            if (animal instanceof Flyer flyer) {
+                flyer.fly();
             }
         }
 

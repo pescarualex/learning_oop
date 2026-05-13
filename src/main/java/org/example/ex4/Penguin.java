@@ -1,19 +1,14 @@
 package org.example.ex4;
 
-public class Penguin extends Birds implements Swim {
+public class Penguin extends Bird implements Swimmer {
 
-    public Penguin(String name, double age, double wingsSpan) {
+    public Penguin(String name, int age, double wingsSpan) {
         super(name, age, wingsSpan);
     }
 
     @Override
     public void makeSound() {
         System.out.println("Honk");
-    }
-
-    @Override
-    public void sleep() {
-        System.out.println(getName() + " is sleeping.");
     }
 
     @Override
