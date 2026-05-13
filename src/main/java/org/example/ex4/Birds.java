@@ -12,4 +12,11 @@ public abstract class Birds extends Animal {
 
         this.wingsSpan = wingsSpan;
     }
+
+    @Override
+    public String toString() {
+        return super.toString() + "Birds{" +
+                "wingsSpan=" + wingsSpan +
+                '}';
+    }
 }

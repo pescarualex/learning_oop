@@ -12,4 +12,11 @@ public abstract class Mammal extends Animal {
 
         this.furColor = furColor;
     }
+
+    @Override
+    public String toString() {
+        return super.toString() + "Mammal{" +
+                "furColor='" + furColor + '\'' +
+                '}';
+    }
 }
