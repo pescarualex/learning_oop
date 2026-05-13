@@ -4,15 +4,11 @@ public class CardPaymentProcessor implements PaymentProcessor {
     private final String cardNumber;
 
     public CardPaymentProcessor(String cardNumber) throws InvalidPaymentException {
-        if (cardNumber == null || cardNumber.isBlank()) {
+        if (cardNumber == null || cardNumber.isBlank() || cardNumber.length() < 13) {
             throw new InvalidPaymentException("Card number incorrect.");
         }
 
-        if (cardNumber.length() < 13) {
-            throw new IllegalArgumentException("Card number incorrect");
-        } else {
-            this.cardNumber = cardNumber;
-        }
+        this.cardNumber = cardNumber;
     }
 
     @Override

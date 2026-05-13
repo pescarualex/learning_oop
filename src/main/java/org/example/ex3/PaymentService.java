@@ -10,7 +10,7 @@ public class PaymentService {
 
     public PaymentResult pay(double amount, String currency) throws InvalidPaymentException {
         if (amount <= 0) {
-            throw new InvalidPaymentException("The amount cannot be less than 0");
+            throw new InvalidPaymentException("The amount cannot be less or equal with 0");
         }
 
         if (currency == null || currency.isBlank()) {
